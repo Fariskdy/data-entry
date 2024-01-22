@@ -1,0 +1,207 @@
+<%- include('./layouts/header') %>
+
+    <section data-bs-version="5.1" class="header09 startm5 cid-u1Y49FOU2Q" id="header09-b">
+
+
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="content-wrap col-12 col-md-10">
+                    <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-2">
+                        <strong>Dirasa Islamic E-School</strong>
+                    </h1>
+
+
+                    <div class="mbr-section-btn"><a class="btn btn-danger disabled display-7" href="">Data
+                            Collection - Step 2 of 2</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section data-bs-version="5.1" class="news09 startm5 cid-u1Y4BVDw29" id="news09-c">
+
+        <div class="container">
+
+            <div class="row justify-content-center ">
+                <div class="col-12 col-lg-11">
+                    <div class="item features-without-image col-12 active">
+                        <div class="item-wrapper">
+                            <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-5"><strong>Teacher Data</strong>
+                            </h5>
+                            <div class="details">
+                                <div class="details-item display-7">
+                                    <span class="mbr-iconfont details-icon material material-person"></span>
+                                    <p class="mbr-tag mbr-fonts-style display-7">Teacher Name :&nbsp; &nbsp;<strong>
+                                            <%= teacher.teacherName %>
+                                        </strong><br></p>
+                                </div>
+
+                            </div>
+                            <div class="details">
+                                <div class="details-item display-7">
+                                    <span class="mbr-iconfont details-icon socicon-mailru socicon"></span>
+                                    <p class="mbr-tag mbr-fonts-style display-7"></p>
+                                    <p>E-mail ID :&nbsp; &nbsp;<strong>
+                                            <%= teacher.teacherEmail %>
+                                        </strong><br></p>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <div class="details-item display-7">
+                                    <span class="mbr-iconfont details-icon material material-phone-iphone"></span>
+                                    <p class="mbr-tag mbr-fonts-style display-7"></p>
+                                    <p>Mobile Number :&nbsp; &nbsp; <strong>
+                                            <%= teacher.teacherPhone %>
+                                        </strong><br></p>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <div class="details-item display-7">
+                                    <span class="mbr-iconfont details-icon material material-people"></span>
+                                    <p class="mbr-tag mbr-fonts-style display-7"></p>
+                                    <p>Total Number of Students :&nbsp; &nbsp; <strong>
+                                            <%= teacher.studentsCount %>
+                                        </strong></p>
+                                    <p></p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section data-bs-version="5.1" class="features035 cid-u1Y8jwpgtq" id="features035-g">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="mbr-section-title mbr-fonts-style align-center mb-2 display-5"><strong>STUDENTS
+                            LIST</strong></h3>
+                </div>
+                <div class="col-10 mb-2 mx-auto">
+                    <div class="mbr-section-btn text-lg-right">
+                        <a class="btn btn-primary modal-btn display-7" href="#" data-toggle="modal"
+                            data-target="#addStudentModal">
+                            <span class="material material-add mbr-iconfont mbr-iconfont-btn"></span>Add Student
+                        </a>
+                    </div>
+
+                    <!-- Modal Structure -->
+                    <div class="modal fade" id="addStudentModal" tabindex="-1" role="dialog"
+                        aria-labelledby="addStudentModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="addStudentModalLabel">Add Student</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <!-- Your student details form goes here -->
+                                    <form id="studentForm" action="/dirasa/student/<%= teacher.teacherId %>" method="post">
+                                        <!-- Add your form fields here -->
+                                        <div class="form-group">
+                                            <label for="studentName">Student Name</label>
+                                            <input type="text" class="form-control" id="studentName" name="studentName"
+                                                required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="enrollmentNumber">Enrollment Number</label>
+                                            <input type="text" class="form-control" id="enrollmentNumber"
+                                                name="enrollmentNumber" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="studentLevel">Student Level</label>
+                                            <select class="form-control" id="studentLevel" name="studentLevel" required>
+                                                <option value="">Select Level</option>
+                                                <option value="1">Level 1</option>
+                                                <option value="2">Level 2</option>
+                                                <option value="3">Level 3</option>
+                                                <option value="4">Level 4</option>
+                                                <option value="5">Level 5</option>
+                                                <option value="6">Level 6</option>
+                                                <option value="7">Level 7</option>
+                                                <option value="8">Level 8</option>
+                                                <option value="9">Level 9</option>
+                                                <option value="10">Level 10</option>
+                                            </select>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary">Save Student</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        $(document).ready(function () {
+                            // When the "Add Student" button is clicked, open the modal
+                            $('.modal-btn').click(function () {
+                                $('#addStudentModal').modal('show');
+                            });
+                            // close button
+                            $('.close').click(function () {
+                                $('#addStudentModal').modal('hide');
+                            });
+                        });
+                    </script>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-9">
+                    <!-- Responsive Table -->
+                    <!-- dirasa-students view -->
+<div class="table-responsive">
+    <% if (teacher.students && teacher.students.length > 0) { %>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>SI NO</th>
+                    <th>Student Name</th>
+                    <th>Enrollment Number</th>
+                    <th>Level</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% teacher.students.forEach((student, index) => { %>
+                    <tr>
+                        <td><%= index + 1 %></td>
+                        <td><%= student.studentName %></td>
+                        <td><%= student.enrollmentNumber %></td>
+                        <td><%= student.studentLevel %></td>
+                        <td>
+                            <div class="btn-group">
+                                <button class="btn btn-sm btn-primary"><span class="material material-edit mbr-iconfont mbr-iconfont-btn"></span></button>
+                                <button class="btn btn-sm btn-info"><span class="material material-delete mbr-iconfont mbr-iconfont-btn"></span></button>
+                            </div>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p>No Student Data Found</p>
+    <% } %>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <%- include('./layouts/footer') %>

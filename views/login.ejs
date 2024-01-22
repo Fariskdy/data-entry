@@ -1,0 +1,52 @@
+<%- include('./layouts/header') %>
+
+    <section data-bs-version="5.1" class="form03 cid-u1ZyJ83ENZ" id="form03-l">
+
+
+
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg item-wrapper">
+                    <div class="mbr-section-head mb-5">
+                        <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-5">
+                            <strong>Login to your account</strong>
+                        </h3>
+
+                    </div>
+                    <div class="col-lg-12 mx-auto mbr-form" data-form-type="formoid">
+                        <form action="/auth/login" method="POST" class="mbr-form form-with-styler"
+                            data-form-title="Form Name">
+                            
+                            <div class="dragArea row">
+                                <div class="col-12 form-group mb-3 mb-3" data-for="email">
+                                    <input type="email" name="email" placeholder="E-mail" data-form-field="email"
+                                        class="form-control" value="" id="email">
+                                </div>
+                                <div class="col-12 form-group mb-3 mb-3" data-for="password">
+                                    <input type="password" name="password" placeholder="Password"
+                                        data-form-field="password" class="form-control" value="" id="password">
+                                </div>
+
+
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 mbr-section-btn"><button type="submit"
+                                        class="btn btn-primary display-7">
+                                        Login</button></div>
+                            </div>
+                        </form>
+                    </div>
+
+
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="image-wrapper">
+                        <img class="w-100" src="/assets/images/mbr-1249x833.jpg" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <%- include('./layouts/footer') %>

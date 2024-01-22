@@ -1,0 +1,65 @@
+<%- include('./layouts/header') %>
+
+    <section data-bs-version="5.1" class="header09 startm5 cid-u1Y0WXnmq9" id="header09-7">
+
+
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="content-wrap col-12 col-md-10">
+                    <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-2">
+                        <strong>Dirasa Islamic E-School</strong>
+                    </h1>
+
+
+                    <div class="mbr-section-btn"><a class="btn btn-danger disabled display-7"
+                            href="">Data Collection - Step 1 Of 2</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section data-bs-version="5.1" class="form5 cid-u1Y2qFbV7u" id="form02-8">
+
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 content-head">
+                    <div class="mbr-section-head mb-5">
+                        <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-5">
+                            <strong>Teacher's Data</strong>
+                        </h3>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 mx-auto mbr-form">
+                    <form action="/dirasa/teacher" method="POST" class="mbr-form form-with-styler" data-form-title="Dirasa Form">
+                        <div class="dragArea row">
+                            <div class="col-md col-sm-12 form-group mb-3" data-for="teacherName">
+                                <input type="text" name="teacherName" placeholder="Name" data-form-field="teacherName" class="form-control" value="" id="teacherName-form-8" required>
+                            </div>
+                            <div class="col-md col-sm-12 form-group mb-3" data-for="teacherEmail">
+                                <input type="email" name="teacherEmail" placeholder="Email ID" data-form-field="teacherEmail" class="form-control" value="" id="teacherEmail-form-8" required>
+                            </div>
+                            <div class="col-12 form-group mb-3" data-for="teacherPhone">
+                                <input type="tel" name="teacherPhone" placeholder="Phone" data-form-field="teacherPhone" class="form-control" value="" id="teacherPhone-form-8" required>
+                            </div>
+                            <div class="col-12 form-group mb-3" data-for="studentsCount">
+                                <input type="number" name="studentsCount" placeholder="Number of Students" data-form-field="studentsCount" class="form-control" value="" id="studentsCount-form-8" required>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
+                                <button type="submit" class="btn btn-warning display-7">
+                                    <span class="material material-arrow-forward mbr-iconfont mbr-iconfont-btn"></span>Next
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+<%- include('./layouts/footer') %>

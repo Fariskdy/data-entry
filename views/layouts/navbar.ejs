@@ -1,0 +1,51 @@
+<section data-bs-version="5.1" class="menu menu3 cid-u1XYu6yHY2" once="menu" id="menu03-1">
+
+
+    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="/">
+                        <img src="/assets/images/logo-white.svg" alt="Words Academy" style="height: 5rem;">
+                    </a>
+                </span>
+
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse"
+                data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <% if (!user) { %>
+                    <div class="navbar-buttons mbr-section-btn">
+                        <a class="btn btn-primary display-7" href="/auth/login">Login</a>
+                    </div>
+                <% } else { %>
+                    <div class="navbar-buttons mbr-section-btn">
+                        <% if (req.originalUrl.includes('admin')){ %>
+                            <% console.log(req.originalUrl) %>
+                            <!-- User is logged in and URL contains 'admin' -->
+                            <a class="btn btn-sm btn-primary display-7" href="/">Home</a>
+                            <a class="btn btn-sm btn-primary display-7" href="/auth/logout">Logout</a>
+                        <% } else { %>
+                            <!-- User is logged in, but URL does not contain 'admin' -->
+                            <a class="btn btn-sm btn-primary display-7" href="/admin/dashboard">Dashboard</a>
+                            <a class="btn btn-sm btn-primary display-7" href="/auth/logout">Logout</a>
+                        <% } %>
+                    </div>
+                <% } %>
+                
+
+
+
+            </div>
+        </div>
+    </nav>
+</section>
